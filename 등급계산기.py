@@ -89,6 +89,14 @@ class Node:
                 self.left=node
             else:
                 self.left.push(node)
+    def Max(self):
+        if self.right==None:
+            return self.value
+        return self.right.Max()
+    def Min(self):
+        if self.left==None:
+            return self.value
+        return self.left.Min()
 root=None
 for studentName in name_score:
     tmp=Node(name_score[studentName])
@@ -130,8 +138,8 @@ print(중앙값(root))
 # 생각이 들었다. 해당 브랜치에서 최고점과 최저점도 출력하도록 코드를 구현하고 
 # "Min,Max 출력 구현" 라는 제목으로 commit
 ################################## < TO DO > ##################################
-    
 
+print(root.Max(),root.Min())
 
 
 
