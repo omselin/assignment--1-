@@ -62,7 +62,7 @@ for studentName in name_score:
     sum+=name_score[studentName]
     
 
-print(f"{studentName}-{grade}")
+print(sum/count)
 
 
 
