@@ -22,21 +22,7 @@ if __name__=="__main__":
                 print(f"Invalid input file format.({count})")
                 print("Score must be integer.")
                 sys.exit(1)
-    for studentName in name_score:
-        a=name_score[studentName]
-        if a>=90:
-            grade='A'
-        elif a>=80:
-            grade='B'
-        elif a>=70:
-            grade='C'
-        elif a>=60:
-            grade='D'
-        else:
-            grade='F'
-
-        print(f"{studentName}-{grade}")
-
+    
 
 # name_score = {Student1 : 91, Student2 : 54, ...}
 # 코드 작성할 때 모든 line에 한 칸 들여쓰고 작성하는 것을 권장
@@ -49,20 +35,20 @@ if __name__=="__main__":
 # 이를 기준으로 score.txt의 학생들의 등급을 출력하는 기능을 구현하고
 # "등급 출력 구현"이라는 제목으로 commit
 ################################## < TO DO > ##################################
-    
-    
+for studentName in name_score:
+    a=name_score[studentName]
+    if a>=90:
+        grade='A'
+    elif a>=80:
+        grade='B'
+    elif a>=70:
+        grade='C'
+    elif a>=60:
+        grade='D'
+    else:
+        grade='F'
 
-
-
-
-
-
-
-
-
-
-
-
+    print(f"{studentName}-{grade}")
 
 
 ###############################################################################
@@ -71,7 +57,12 @@ if __name__=="__main__":
 # [mission 2] 
 # 전체 평균 출력 구현하고 "평균 출력 구현"이라는 제목으로 commit
 ################################## < TO DO > ##################################
+sum=0
+for studentName in name_score:
+    sum+=name_score[studentName]
     
+
+print(f"{studentName}-{grade}")
 
 
 
