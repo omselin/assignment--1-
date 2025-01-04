@@ -57,12 +57,50 @@ for studentName in name_score:
 # [mission 2] 
 # 전체 평균 출력 구현하고 "평균 출력 구현"이라는 제목으로 commit
 ################################## < TO DO > ##################################
-sum=0
-for studentName in name_score:
-    sum+=name_score[studentName]
-    
+def 개수(node):
+    if node is None:
+        return 0
+    return 개수(node.left)+개수(node.right)+1
+def 중앙값(node,fromL=0,fromR=0):
+    if node is None:
+        return -250
+    L=fromL+개수(node.left)
+    R=fromR+개수(node.right)
+    if L==R or abs(L-R)==1:
+        return node.value
+    elif L<R:
+        return 중앙값(node.right,L+1,fromR)
+    else:
+        return 중앙값(node.left,fromL,R+1)
 
-print(f"{studentName}-{grade}")
+class Node:
+    def __init__(self,value):
+        self.value=value
+        self.left=None
+        self.right=None
+    def push(self,node:"Node"):
+        if self.value<node.value:
+            if self.right==None:
+                self.right=node
+            else:
+                self.right.push(node)
+        else:
+            if self.left==None:
+                self.left=node
+            else:
+                self.left.push(node)
+root=None
+for studentName in name_score:
+    tmp=Node(name_score[studentName])
+    if root==None:
+        root=tmp
+    else:
+        root.push(tmp)
+print(중앙값(root))
+
+
+
+
 
 
 
